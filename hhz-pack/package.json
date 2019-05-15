@@ -1,11 +1,14 @@
 {
   "name": "hhz-pack",
   "version": "1.0.0",
-  "description": "",
+  "description": "the simple version of webpack",
   "main": "index.js",
+  "bin": {
+    "hhz-pack": "./src/index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "hhz",
   "license": "ISC"
 }

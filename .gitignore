@@ -1,8 +1,5 @@
 # 忽略npm依赖包
 webpackxx/node_modules/
-# 忽略npm插件初始安装信息
-webpackxx/package-lock.json
-package-lock.json
 
 # 忽略vsCode配置信息
 .vscode/

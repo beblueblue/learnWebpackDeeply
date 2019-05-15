@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
+    "build:hhz": "hhz-pack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -11,3 +11,6 @@ learn how the webpack work, deeply
 @todo
 加上loader
 加上plugin机制 -->
+
+# 规范
+配置文件为hhz.config.js
