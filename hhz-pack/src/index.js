@@ -60,11 +60,31 @@ class hhzPack{
         // console.log(code)
         // console.log(name)
     }
+    generateModuleStr(){
+        let fnTemp = ''
+        Object.keys(this.modules).forEach(name => {
+            fnTemp += `"${name}": ${this.modules[name]},`
+        })
+        return fnTemp
+    }
+    generateFile() {
+        let template = fs.readFileSync(path.resolve(__dirname, './template.js'), 'utf-8')
+        this.template = template.replace('__entry__', this.entry)
+                            .replace('__module_content__', this.generateModuleStr())
+        // 写入内存
+        // app.get('xxx.js', res => {
+        //     res.send(this.template)
+        // })
+        fs.writeFileSync('./dist/'+this.config.output.filename, this.template)
+        console.log('写入文件完毕')
+    }
     start() {
         console.log('开始解析文件的依赖')
         const entryPath = path.resolve(this.root, this.entry)
         this.creatModule(entryPath, this.entry)
-        console.log(this.modules)
+        console.log(this.creatModule)
+        // 生成文件
+        this.generateFile()
     }
 }
 
